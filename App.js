@@ -15,7 +15,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen
-          name="Creanciers"
+          name="PaimentFacture"
           component={PaimentFacture}
           options={{ title: "Paiement de facture", headerLeft: null }}
         />

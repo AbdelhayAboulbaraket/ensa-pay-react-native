@@ -22,7 +22,7 @@ function LoginScreen ({navigation}) {
             <Button
               buttonStyle={styles.loginButton}
               onPress={() => {
-                navigation.navigate('Creanciers')
+                navigation.navigate('PaimentFacture')
               }}
               title="Login"
             />
