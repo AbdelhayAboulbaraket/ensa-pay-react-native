@@ -4,11 +4,10 @@ import styles from "./style";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
-export default function Creanciers() {
+export default function Historique() {
 
-  const Tab = createBottomTabNavigator();
 
   return (
-      <Text>Creanciers</Text>
+      <Text>Historique</Text>
   );
     }
