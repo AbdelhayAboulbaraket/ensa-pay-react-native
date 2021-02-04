@@ -24,9 +24,9 @@ import {
   Right,
 } from "native-base";
 
-export default function Creanciers({navigation}) {
+export default function Creanciers({ navigation }) {
   const services = require("../../data/data").default;
-  const creancierListItem = (props) => {
+  const creancierListItem = () => {
     const [isShowing, setIsShowing] = useState(true);
     const toggleShow = (value) => {
       setIsShowing(!value);
@@ -35,16 +35,17 @@ export default function Creanciers({navigation}) {
       <ListItem thumbnail key={index} onPress={() => toggleShow(isShowing)}>
         <Left>
           <Thumbnail
-            square
+            large
             source={{
               uri: item.avatar,
             }}
+            style={{ resizeMode: "contain" }}
           />
         </Left>
         <Body>
-          <Text>{item.nom}</Text>
-          <Text note numberOfLines={1}>
-            {item.categorie}
+          <Text style={{ fontWeight: "bold" }}>{item.nom}</Text>
+          <Text style={{ fontStyle: "italic" }}>
+            Catégorie : {item.categorie}
           </Text>
           <Text style={{ display: isShowing == true ? "flex" : "none" }}>
             {item.creances.map((creaItem, creaIndex) => (
@@ -54,13 +55,15 @@ export default function Creanciers({navigation}) {
                     alignItems: "center",
                     backgroundColor: "#5c97bf",
                     marginRight: 10,
+                    marginTop: 10,
                     padding: 10,
+                    borderRadius: 10,
                   }}
                   onPress={() => {
                     navigation.navigate("CreanceFormulaire", {
                       service: item.nom,
                       creance: creaItem.nom,
-                      form: creaItem.formulaire
+                      form: creaItem.formulaire,
                     });
                   }}
                 >
