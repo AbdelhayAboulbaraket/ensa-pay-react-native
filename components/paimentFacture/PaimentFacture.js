@@ -1,11 +1,12 @@
 import React from 'react'
-import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView} from 'react-native';
+import {Keyboard, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView} from 'react-native';
 import Creanciers from '../creanciers/Creanciers';
 import Historique from '../historique/Historique';
 import styles from "./style";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons,FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Input, Button, Text } from "react-native-elements";
 
 
 export default function PaimentFacture() {

@@ -8,7 +8,6 @@ import { Button } from 'react-native-elements';
 function LoginScreen ({navigation}) {
 
     return ( 
-    
     <View style={styles.container}>
       <StatusBar style="auto" />
       <KeyboardAvoidingView style={styles.containerView} behavior="padding">
