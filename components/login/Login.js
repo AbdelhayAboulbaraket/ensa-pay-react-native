@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import axios from "axios";
-
+import base64 from 'react-native-base64'
 import styles from "./style";
 import {
   Keyboard,
@@ -19,25 +19,26 @@ function LoginScreen({ navigation }) {
   const [password, setPassword] = useState("");
 
   const loginUser = () => {
-    // navigation.navigate("PaimentFacture");
-
+    navigation.navigate("PaimentFacture");
     
-    let authString = "Basic " + btoa(login + ":" + password);
-    axios
-      .get("http://192.168.1.95:8082/client/" + login, {
-        headers: { authorization: authString },
-      })
-      .then((response) => {
-        console.log(response);
-        if (typeof response.data == "object") {
-          navigation.navigate("PaimentFacture");
-        } else {
-          alert("Mot de passe erroné !");
-        }
-      })
-      .catch((error) => {
-        alert("Mot de passe erroné !");
-      });
+  //   let authString = "Basic " + base64.encode(login + ":" + password);
+  //   axios
+  //     .get("http://localhost:8082/client/" + login, {
+  //       headers: { authorization: authString },
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
+  //       if (typeof response.data == "object") {
+  //         navigation.navigate("PaimentFacture");
+  //       } else {
+  //         alert(response)
+  //         alert("Mot de passe erroné !");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       alert(response)
+  //       alert("Mot de passe erroné !");
+  //     });
   };
 
   return (
